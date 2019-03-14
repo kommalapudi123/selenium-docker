@@ -1,16 +1,19 @@
-seleniumhub:
+version: '3'
+
+services:
+   seleniumhub:
         image: selenium/hub       
         restart: always
         ports:
            - 4444:4444
-firefoxnode: 
+   firefoxnode: 
         image: selenium/node-firefox-debug
         restart: always
         ports:
            - 4577
         links:
            - seleniumhub:hub
-chromenode:
+   chromenode:
         image: selenium/node-chrome-debug
         restart: always
         ports:
